@@ -1,6 +1,7 @@
 /* eslint-disable */
 
-const ts = require('rollup-plugin-typescript2');
+const ts = require('rollup-plugin-typescript2')
+const json = require('@rollup/plugin-json')
 const pkg = require('../package.json')
 const version = process.env.VERSION || pkg.version
 
@@ -39,6 +40,7 @@ function genConfig (name) {
       ts({
         tsconfig: './tsconfig.json'
       }),
+      json()
     ],
     output: {
       // file: opts.dest,
